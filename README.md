@@ -1,2 +1,1 @@
-# AgeGroupApp
-# Age Group Identifier  A simple Java Swing application that allows users to input their age and determine their age group (Child, Teenager, Adult, Senior). The app includes error handling for invalid inputs and a reset feature to clear the input and results.
+This project is a Java Swing application designed to help users identify their age group based on their input age. The application provides tailored workout and simple diet recommendations for different age categories, promoting a healthy lifestyle through physical activity.
