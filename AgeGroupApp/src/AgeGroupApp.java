@@ -22,6 +22,13 @@ public class AgeGroupApp {
         JButton checkButton = new JButton("Check");
         JButton resetButton = new JButton("Reset");
         
+       
+        checkButton.setBackground(Color.GREEN);
+        checkButton.setForeground(Color.BLACK);
+        
+        resetButton.setBackground(Color.RED);
+        resetButton.setForeground(Color.WHITE);
+        
         JTextArea resultArea = new JTextArea(12, 30); 
         resultArea.setFont(font);
         resultArea.setEditable(false); 
@@ -49,8 +56,10 @@ public class AgeGroupApp {
                     
                     String[] ageGroupInfo = determineAgeGroup(age);
                     
-                    String output = "Age Group: " + ageGroupInfo[0] + "\n" +
-                                   "Workout: " + ageGroupInfo[1] + "\n";
+                    String output ="Age Group: " + ageGroupInfo[0] + "\n" +
+                                   "Workout: " + ageGroupInfo[1] + "\n" +
+                                   "Diet: " + ageGroupInfo[2] + "\n" +
+                                   "Hydration: " + ageGroupInfo[3];
                     
                     resultArea.setText(output); 
                 } catch (NumberFormatException ex) {
@@ -72,26 +81,30 @@ public class AgeGroupApp {
     }
 
     private static String[] determineAgeGroup(int age) {
-        String ageGroup, workout;
+        String ageGroup, workout, diet, hydration;
 
         if (age <= 12) {
             ageGroup = "Child.\n";
-            workout = " Encourage at least 60 minutes of physical activity daily:\n- Active play like running, jumping, cycling.\n- Games that develop coordination and balance.\n- Limit screen time to promote movement.\n";
+            workout = "Promote 60 minutes of daily activity with active play, coordination games, and reduced screen time.\n";
+            diet = "Focus on growth with fruits, veggies, healthy snacks, and hydration (water or milk). Limit sugary drinks.\n";
+            hydration = "Drink about 5-7 cups (1.2-1.6 liters) of water daily.\n";
         } else if (age <= 19) {
             ageGroup = "Teenager\n";
-            workout = " Support growing bodies with structured activity:\n- Team sports (football, cricket, basketball).\n- Basic strength training (bodyweight exercises).\n- At least 60 minutes of moderate-to-intense activity daily.\n";
+            workout = "Support growth with structured activities like team sports, bodyweight exercises, and 60 minutes of daily moderate-to-intense activity.\n";
+            diet = "Fuel growth with protein (eggs, fish), calcium (milk, cheese), and limit junk food; choose homemade.\n";
+            hydration = "Drink about 7-10 cups (1.6-2.4 liters) of water daily.\n";
         } else if (age <= 64) {
             ageGroup = "Adult\n";
-            workout = " Maintain fitness and reduce stress:\n- At least 150 minutes of moderate aerobic activity per week.\n- Strength training (2–3 days a week).\n- Mix of walking, cycling, swimming, or yoga.\n";
+            workout = "Achieve fitness with 150 minutes of aerobic activity weekly, strength training 2–3 days, and activities like walking or yoga.\n";
+            diet = "Support health with lean proteins, whole grains, healthy fats, hydration, and limit processed foods.\n";
+            hydration = "Drink about 8-12 cups (2-3 liters) of water daily.\n";
         } else {
             ageGroup = "Senior\n";
-            workout = " Stay active while protecting joints:\n- Daily walking or light stretching.\n- Chair yoga, tai chi, or water aerobics.\n- Focus on flexibility, balance, and light strength.\n";
+            workout = "Stay active with daily walking, light stretching, chair yoga, tai chi, or water aerobics, focusing on flexibility, balance, and light strength.\n";
+            diet = "Support bone health with nutrient-dense foods, smaller meals, calcium, Vitamin D, and hydration.\n";
+            hydration = "Drink about 6-8 cups (1.5-2 liters) of water daily.\n";
         }
 
-        return new String[]{ageGroup, workout};
+        return new String[]{ageGroup, workout, diet, hydration};
     }
-}
-
-
-        
-      
+} 
